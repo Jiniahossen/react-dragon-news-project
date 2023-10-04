@@ -1,7 +1,7 @@
 const Leftsidenav = () => {
     return (
         <div>
-            <h2>Left side</h2>
+            <h2 className=" text-xl font-poppins font-medium">All Category</h2>
         </div>
     );
 };
