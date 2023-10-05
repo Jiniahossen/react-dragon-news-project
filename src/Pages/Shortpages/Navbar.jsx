@@ -1,9 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import userpic from '../../assets/user.png'
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/Authprovider";
 
 
 const Navbar = () => {
 
+    const { user, signout } = useContext(AuthContext);
+
+
+    const handleSignOutButton = () => {
+        signout()
+            .then()
+            .catch()
+    }
 
     const navlinks = <>
         <NavLink to='/'> <li> Home</li></NavLink>
@@ -11,7 +21,7 @@ const Navbar = () => {
         <NavLink to='/career'> <li> Career</li></NavLink>
     </>
     return (
-        <div className="navbar bg-base-100 mb-10">
+        <div className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,10 +40,17 @@ const Navbar = () => {
             </div>
             <div className="navbar-end flex gap-2">
 
-                    <img src={userpic} className="w-8" alt="" />
-                    <button>
-                        <Link className="bg-[#403F3F] text-white text-base font-poppins font-medium px-3 py-1" to='/login'>Login</Link>
-                    </button>
+                <img src={userpic} className="w-8" alt="" />
+
+                {
+                    user ?
+                        <button className="bg-[#403F3F] text-white text-base font-poppins font-medium px-3 py-1" onClick={handleSignOutButton}>signout</button>
+                        :
+                        <Link className="bg-[#403F3F] text-white text-base font-poppins font-medium px-3 py-1" to='/login'> <button>Login</button></Link>
+                }
+
+
+
             </div>
         </div>
     );

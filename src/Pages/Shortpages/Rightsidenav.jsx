@@ -12,11 +12,11 @@ const Rightsidenav = () => {
 
             <h2 className="font-poppins font-medium mb-1 text-xl text-black">Login with</h2>
             <div>
-                <button className=" text-center justify-center items-center gap-2 flex className='flex text-center' border border-black w-full rounded-sm py-1 mb-2">
+                <button className=" text-center justify-center items-center gap-2 flex text-center' border border-black w-full rounded-sm py-1 mb-2">
                  <div className=' text-xl'><BiLogoGoogle></BiLogoGoogle></div>
                     <div className='font-poppins font-normal text-base'>Login with Google</div> 
                 </button>
-                <button className=" text-center justify-center items-center gap-2 flex className='flex text-center' border border-black w-full rounded-sm py-1 mb-10 ">
+                <button className=" text-center justify-center items-center gap-2 flex text-center' border border-black w-full rounded-sm py-1 mb-10 ">
                  <div className=' text-xl'> 
                  <BiLogoGithub></BiLogoGithub></div>
                     <div className='font-poppins font-normal text-base'>Login with github</div> 
